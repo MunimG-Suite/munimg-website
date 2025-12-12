@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MunimG ERP | Smart Accounting for Indian Business</title>
+    <meta name="description" content="Download MunimG ERP - The simple, secure, and offline-first Billing & Accounting software for Indian SMEs.">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://munimg.net/">
+    <meta property="og:title" content="MunimG ERP - Download Now">
+    <meta property="og:description" content="Smart Accounting, Billing & Inventory for Indian Business.">
+    <meta property="og:image" content="https://munimg.net/og-image.png">
+
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary: #009688;       /* Crystal Teal */
+            --primary-dark: #00796B;
+            --text-main: #1D1D1F;
+            --text-sub: #6E6E73;
+            --bg-light: #F5F7FA;
+            --white: #FFFFFF;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-main);
+            line-height: 1.5;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* Background Decoration */
+        .bg-shape {
+            position: absolute;
+            top: -20%;
+            right: -10%;
+            width: 60vw;
+            height: 60vw;
+            background: radial-gradient(circle, rgba(0,150,136,0.1) 0%, rgba(255,255,255,0) 70%);
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        /* Header */
+        header {
+            padding: 2rem 5%;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo {
+            font-weight: 800;
+            font-size: 1.5rem;
+            color: var(--primary);
+            letter-spacing: -0.5px;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* Main Content */
+        main {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 2rem;
+            animation: fadeIn 0.8s ease-out;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            letter-spacing: -1px;
+            margin-bottom: 1rem;
+            background: -webkit-linear-gradient(45deg, var(--text-main), var(--primary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        p.subtitle {
+            font-size: 1.25rem;
+            color: var(--text-sub);
+            max-width: 600px;
+            margin-bottom: 3rem;
+            font-weight: 300;
+        }
+
+        /* Download Button */
+        .download-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--primary);
+            color: var(--white);
+            font-size: 1.1rem;
+            font-weight: 600;
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            box-shadow: 0 10px 20px rgba(0, 150, 136, 0.2);
+            border: 1px solid transparent;
+        }
+
+        .download-btn:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 15px 30px rgba(0, 150, 136, 0.3);
+        }
+
+        .download-btn svg {
+            margin-right: 10px;
+            fill: currentColor;
+        }
+
+        .meta-info {
+            margin-top: 1rem;
+            font-size: 0.85rem;
+            color: var(--text-sub);
+            opacity: 0.8;
+        }
+
+        /* Footer */
+        footer {
+            padding: 2rem;
+            text-align: center;
+            font-size: 0.9rem;
+            color: var(--text-sub);
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            h1 { font-size: 2.5rem; }
+            p.subtitle { font-size: 1.1rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="bg-shape"></div>
+
+    <header>
+        <a href="#" class="logo">
+            <!-- Simple SVG Logo Icon -->
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M3 3V21H21" stroke="#009688" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M18 9L13 14L10 11L7 14" stroke="#009688" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            MunimG
+        </a>
+    </header>
+
+    <main>
+        <h1>Simplify Your Business.</h1>
+        <p class="subtitle">
+            The elegant, secure, and offline-first ERP solution designed for Indian SMEs. 
+            Billing, Accounting, and Inventory made effortless.
+        </p>
+
+        <!-- REPLACE '#' WITH YOUR ACTUAL DOWNLOAD LINK (e.g., Google Drive link or S3 link) -->
+        <a href="#" class="download-btn">
+            <svg width="20" height="20" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/>
+            </svg>
+            Download for Windows
+        </a>
+
+        <div class="meta-info">
+            Version 1.0.0 • Windows 10/11 (64-bit) • 120 MB
+        </div>
+    </main>
+
+    <footer>
+        &copy; 2025 MunimG Solutions. All rights reserved.
+    </footer>
+
+</body>
+</html>
