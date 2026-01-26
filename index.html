@@ -95,7 +95,9 @@
             letter-spacing: -1px;
             margin-bottom: 1rem;
             background: -webkit-linear-gradient(45deg, var(--text-main), var(--primary));
+            background: linear-gradient(45deg, var(--text-main), var(--primary));
             -webkit-background-clip: text;
+            background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
@@ -140,6 +142,29 @@
             font-size: 0.85rem;
             color: var(--text-sub);
             opacity: 0.8;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .meta-info .separator {
+            opacity: 0.5;
+        }
+
+        .download-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .download-btn-android {
+            background-color: #3DDC84;
+        }
+
+        .download-btn-android:hover {
+            background-color: #2ECC71;
+            box-shadow: 0 15px 30px rgba(61, 220, 132, 0.3);
         }
 
         /* Footer */
@@ -199,17 +224,30 @@
             Billing, Accounting, and Inventory made effortless.
         </p>
 
-        <!-- Download link -->
-        <a href="https://github.com/MunimG-Suite/MunimG-Releases/releases/download/v1.1.6/MunimG-1.1.6.msi"
-            class="download-btn">
-            <svg width="20" height="20" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z" />
-            </svg>
-            Download for Windows
-        </a>
+        <!-- Download buttons -->
+        <div class="download-buttons">
+            <a href="https://github.com/MunimG-Suite/MunimG-Releases/releases/download/v1.1.7/MunimG-1.1.7.msi"
+                class="download-btn">
+                <svg width="20" height="20" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M0 3.5L9.9 2.1V11.5H0V3.5ZM11 2L24 0V11.5H11V2ZM0 12.5H9.9V21.9L0 20.5V12.5ZM11 12.5H24V24L11 22V12.5Z" />
+                </svg>
+                Windows
+            </a>
+            <a href="https://github.com/MunimG-Suite/MunimG-Releases/releases/download/v1.0.0%2B1/MunimG-1.0.0.apk"
+                class="download-btn download-btn-android">
+                <svg width="20" height="20" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M17.6 9.48l1.84-3.18c.16-.31.04-.69-.26-.85-.29-.15-.65-.06-.83.22l-1.88 3.24a11.463 11.463 0 00-8.94 0L5.65 5.67c-.19-.29-.58-.38-.87-.2-.28.18-.37.54-.22.83L6.4 9.48A10.78 10.78 0 003 18h18a10.78 10.78 0 00-3.4-8.52zM7 15.25a1.25 1.25 0 110-2.5 1.25 1.25 0 010 2.5zm10 0a1.25 1.25 0 110-2.5 1.25 1.25 0 010 2.5z" />
+                </svg>
+                Android
+            </a>
+        </div>
 
         <div class="meta-info">
-            Version 1.1.6 • Windows 10/11 (64-bit)
+            <span>Windows v1.1.7 (64-bit)</span>
+            <span class="separator">•</span>
+            <span>Android v1.0.0</span>
         </div>
     </main>
 
