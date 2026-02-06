@@ -227,7 +227,9 @@
         <!-- Download buttons -->
         <div class="download-buttons">
             <a href="https://github.com/MunimG-Suite/MunimG-Releases/releases/download/v1.2.0/MunimG.ERP-1.2.0.msi"
-                class="download-btn">
+                class="download-btn"
+                download
+                onclick="startDownload(this.href); return false;">
                 <svg width="20" height="20" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path
                         d="M0 3.5L9.9 2.1V11.5H0V3.5ZM11 2L24 0V11.5H11V2ZM0 12.5H9.9V21.9L0 20.5V12.5ZM11 12.5H24V24L11 22V12.5Z" />
@@ -235,7 +237,9 @@
                 Windows
             </a>
             <a href="https://github.com/MunimG-Suite/MunimG-Releases/releases/download/v1.0.3%2B4/MunimG.ERP-1.0.3.apk"
-                class="download-btn download-btn-android">
+                class="download-btn download-btn-android"
+                download
+                onclick="startDownload(this.href); return false;">
                 <svg width="20" height="20" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path
                         d="M17.6 9.48l1.84-3.18c.16-.31.04-.69-.26-.85-.29-.15-.65-.06-.83.22l-1.88 3.24a11.463 11.463 0 00-8.94 0L5.65 5.67c-.19-.29-.58-.38-.87-.2-.28.18-.37.54-.22.83L6.4 9.48A10.78 10.78 0 003 18h18a10.78 10.78 0 00-3.4-8.52zM7 15.25a1.25 1.25 0 110-2.5 1.25 1.25 0 010 2.5zm10 0a1.25 1.25 0 110-2.5 1.25 1.25 0 010 2.5z" />
@@ -254,6 +258,16 @@
     <footer>
         &copy; 2025 MunimG Solutions. All rights reserved.
     </footer>
+
+    <script>
+        function startDownload(url) {
+            const iframe = document.createElement('iframe');
+            iframe.style.display = 'none';
+            iframe.src = url;
+            document.body.appendChild(iframe);
+            setTimeout(() => iframe.remove(), 60000);
+        }
+    </script>
 
 </body>
 
