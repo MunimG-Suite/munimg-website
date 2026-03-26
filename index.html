@@ -64,6 +64,9 @@
             padding: 2rem 5%;
             display: flex;
             align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            flex-wrap: wrap;
         }
 
         .logo {
@@ -75,6 +78,24 @@
             display: flex;
             align-items: center;
             gap: 10px;
+        }
+
+        .top-link {
+            text-decoration: none;
+            color: var(--text-main);
+            background-color: var(--white);
+            border: 1px solid rgba(0, 150, 136, 0.25);
+            font-size: 0.95rem;
+            font-weight: 600;
+            padding: 0.55rem 1rem;
+            border-radius: 999px;
+            transition: all 0.25s ease;
+        }
+
+        .top-link:hover {
+            border-color: var(--primary);
+            color: var(--primary-dark);
+            transform: translateY(-1px);
         }
 
         /* Main Content */
@@ -215,6 +236,7 @@
             </svg>
             MunimG
         </a>
+        <a class="top-link" href="/astrology/">Astrology Guidance</a>
     </header>
 
     <main>
@@ -250,7 +272,7 @@
 
         <div class="meta-info">
             <span>Windows v1.2.9 (64-bit)</span>
-            <span class="separator">•</span>
+            <span class="separator">&bull;</span>
             <span>Android v1.1.2</span>
         </div>
     </main>

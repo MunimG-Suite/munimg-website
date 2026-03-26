@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MunimG Astrology | Personalized Guidance</title>
+    <meta name="description" content="Personalized daily astrology guidance from MunimG.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary: #009688;
+            --primary-dark: #00796B;
+            --text-main: #1D1D1F;
+            --text-sub: #6E6E73;
+            --bg-light: #F5F7FA;
+            --white: #FFFFFF;
+            --border: #D9E2EC;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: radial-gradient(circle at 90% -10%, rgba(0, 150, 136, 0.15), transparent 45%), var(--bg-light);
+            color: var(--text-main);
+            line-height: 1.5;
+            min-height: 100vh;
+        }
+
+        .container {
+            width: min(1120px, 92vw);
+            margin: 0 auto;
+        }
+
+        header {
+            padding: 1.25rem 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            font-weight: 800;
+            font-size: 1.2rem;
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .home-link {
+            text-decoration: none;
+            color: var(--text-main);
+            border: 1px solid var(--border);
+            background: var(--white);
+            padding: 0.6rem 1rem;
+            border-radius: 999px;
+            font-weight: 600;
+            transition: all 0.2s ease;
+        }
+
+        .home-link:hover {
+            border-color: var(--primary);
+            color: var(--primary-dark);
+        }
+
+        .hero {
+            margin-top: 0.4rem;
+            margin-bottom: 1rem;
+        }
+
+        h1 {
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
+            line-height: 1.1;
+            font-weight: 800;
+            margin-bottom: 0.55rem;
+            letter-spacing: -0.02em;
+        }
+
+        .subtitle {
+            color: var(--text-sub);
+            max-width: 780px;
+            font-size: 1.03rem;
+        }
+
+        .panel {
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 18px;
+            box-shadow: 0 10px 24px rgba(17, 24, 39, 0.08);
+            overflow: hidden;
+        }
+
+        .panel-top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0.8rem 1rem;
+            border-bottom: 1px solid var(--border);
+            gap: 0.9rem;
+            flex-wrap: wrap;
+            background: linear-gradient(to right, rgba(0, 150, 136, 0.06), transparent);
+        }
+
+        .panel-label {
+            font-weight: 700;
+            font-size: 0.95rem;
+        }
+
+        .open-full {
+            text-decoration: none;
+            color: var(--white);
+            background: var(--primary);
+            border: 1px solid transparent;
+            padding: 0.5rem 0.95rem;
+            border-radius: 999px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            transition: background-color 0.2s ease;
+        }
+
+        .open-full:hover {
+            background: var(--primary-dark);
+        }
+
+        .app-frame {
+            width: 100%;
+            min-height: 78vh;
+            border: 0;
+            background: #fff;
+            display: block;
+        }
+
+        .note {
+            margin: 0.9rem 0 2rem;
+            color: var(--text-sub);
+            font-size: 0.9rem;
+        }
+
+        footer {
+            color: var(--text-sub);
+            font-size: 0.85rem;
+            padding-bottom: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .app-frame {
+                min-height: 84vh;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <a class="logo" href="/">MunimG Astrology</a>
+            <a class="home-link" href="/">Back to MunimG Home</a>
+        </header>
+
+        <main>
+            <section class="hero">
+                <h1>Personalized Astrology Guidance</h1>
+                <p class="subtitle">Daily guidance designed for regular users. If the embedded view is blocked on your browser, open the app directly using the button on the right.</p>
+            </section>
+
+            <section class="panel">
+                <div class="panel-top">
+                    <p class="panel-label">Astrology 912</p>
+                    <a id="open-full-link" class="open-full" href="https://astrology.munimg.net/" target="_blank" rel="noopener noreferrer">Open in Full Page</a>
+                </div>
+                <iframe id="astro-frame" class="app-frame" title="MunimG Astrology App" src="https://astrology.munimg.net/" loading="lazy"></iframe>
+            </section>
+
+            <p class="note">Tip: You can override app URL for testing by adding <code>?app=https://your-url</code> to this page URL.</p>
+        </main>
+
+        <footer>
+            &copy; 2026 MunimG Solutions. All rights reserved.
+        </footer>
+    </div>
+
+    <script>
+        (function () {
+            const params = new URLSearchParams(window.location.search);
+            const customUrl = params.get('app');
+            if (!customUrl) return;
+
+            try {
+                const parsed = new URL(customUrl);
+                const frame = document.getElementById('astro-frame');
+                const openFull = document.getElementById('open-full-link');
+                frame.src = parsed.toString();
+                openFull.href = parsed.toString();
+            } catch (_) {
+                // Ignore invalid URL and keep default source.
+            }
+        })();
+    </script>
+</body>
+
+</html>
