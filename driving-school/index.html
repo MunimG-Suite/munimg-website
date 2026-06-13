@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Driving School MH | Android APK Download</title>
+    <meta name="description" content="Download Driving School MH, an offline-first Android app for Maharashtra driving schools.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://munimg.net/driving-school/">
+    <meta property="og:title" content="Driving School MH - Android APK Download">
+    <meta property="og:description" content="Offline-first admissions, attendance, billing, forms, reports, and backup for Maharashtra driving schools.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --green: #0b3d2e;
+            --green-2: #13714f;
+            --gold: #c79a3c;
+            --ink: #18211d;
+            --muted: #65746d;
+            --line: #dce5df;
+            --bg: #eef3ef;
+            --white: #ffffff;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            min-height: 100vh;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(180deg, #f7faf8 0%, var(--bg) 100%);
+            color: var(--ink);
+            line-height: 1.55;
+        }
+
+        .container {
+            width: min(1060px, 92vw);
+            margin: 0 auto;
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            padding: 1.4rem 0;
+            flex-wrap: wrap;
+        }
+
+        .brand {
+            color: var(--green-2);
+            font-size: 1.1rem;
+            font-weight: 800;
+            text-decoration: none;
+        }
+
+        .home-link {
+            border: 1px solid var(--line);
+            border-radius: 999px;
+            color: var(--ink);
+            background: var(--white);
+            font-weight: 700;
+            padding: 0.65rem 1rem;
+            text-decoration: none;
+        }
+
+        main {
+            padding: 2.5rem 0 3rem;
+        }
+
+        .hero {
+            display: grid;
+            grid-template-columns: minmax(0, 1.1fr) minmax(300px, 0.9fr);
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .eyebrow {
+            color: var(--green-2);
+            font-size: 0.85rem;
+            font-weight: 800;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            margin-bottom: 0.8rem;
+        }
+
+        h1 {
+            font-size: clamp(2.2rem, 5vw, 4.6rem);
+            line-height: 1;
+            letter-spacing: 0;
+            margin-bottom: 1rem;
+            color: var(--green);
+        }
+
+        .subtitle {
+            color: var(--muted);
+            font-size: 1.12rem;
+            max-width: 680px;
+            margin-bottom: 1.6rem;
+        }
+
+        .actions {
+            display: flex;
+            gap: 0.8rem;
+            flex-wrap: wrap;
+            align-items: center;
+            margin-bottom: 0.9rem;
+        }
+
+        .button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 999px;
+            padding: 0.9rem 1.25rem;
+            font-weight: 800;
+            text-decoration: none;
+            border: 1px solid transparent;
+        }
+
+        .button.primary {
+            background: var(--green-2);
+            color: var(--white);
+            box-shadow: 0 14px 28px rgba(19, 113, 79, 0.2);
+        }
+
+        .button.secondary {
+            color: var(--green);
+            background: var(--white);
+            border-color: var(--line);
+        }
+
+        .version {
+            color: var(--muted);
+            font-size: 0.92rem;
+        }
+
+        .release-panel {
+            background: var(--white);
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            padding: 1.2rem;
+            box-shadow: 0 18px 40px rgba(22, 38, 31, 0.08);
+        }
+
+        .panel-title {
+            color: var(--green);
+            font-size: 1.05rem;
+            font-weight: 800;
+            margin-bottom: 0.8rem;
+        }
+
+        .detail-list {
+            display: grid;
+            gap: 0.65rem;
+            color: var(--muted);
+            font-size: 0.95rem;
+        }
+
+        .detail-list strong {
+            color: var(--ink);
+        }
+
+        .checksum {
+            overflow-wrap: anywhere;
+            font-family: Consolas, 'Courier New', monospace;
+            font-size: 0.78rem;
+            color: var(--ink);
+            background: #f7faf8;
+            border: 1px solid var(--line);
+            border-radius: 6px;
+            padding: 0.7rem;
+            margin-top: 0.8rem;
+        }
+
+        .sections {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .section-card {
+            background: var(--white);
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            padding: 1rem;
+        }
+
+        .section-card h2 {
+            color: var(--green);
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .section-card p,
+        .section-card li {
+            color: var(--muted);
+            font-size: 0.94rem;
+        }
+
+        .section-card ul,
+        .section-card ol {
+            padding-left: 1.15rem;
+        }
+
+        footer {
+            color: var(--muted);
+            font-size: 0.9rem;
+            padding: 0 0 2rem;
+        }
+
+        @media (max-width: 840px) {
+            .hero,
+            .sections {
+                grid-template-columns: 1fr;
+            }
+
+            main {
+                padding-top: 1.4rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <a class="brand" href="/">MunimG</a>
+            <a class="home-link" href="/">Back to MunimG Home</a>
+        </header>
+
+        <main>
+            <section class="hero">
+                <div>
+                    <p class="eyebrow">Android APK for Maharashtra driving schools</p>
+                    <h1>Driving School MH</h1>
+                    <p class="subtitle">Offline-first admissions, attendance, billing, payments, Form 14/Form 15, reports, printing, and local backup for driving-school owners.</p>
+                    <div class="actions">
+                        <a class="button primary" href="/downloads/driving-school/DrivingSchoolMH-1.0.0-build1.apk" download>Download Android APK</a>
+                        <a class="button secondary" href="/downloads/driving-school/DrivingSchoolMH-1.0.0-build1.apk.sha256.txt">View checksum</a>
+                    </div>
+                    <p class="version">Version 1.0.0+1 | Android 7.0 or newer | Direct APK install</p>
+                </div>
+
+                <aside class="release-panel" aria-label="Release details">
+                    <p class="panel-title">Production release</p>
+                    <div class="detail-list">
+                        <p><strong>Package:</strong> com.drivingschoolmh.driving_school_mh</p>
+                        <p><strong>Build:</strong> 1.0.0+1</p>
+                        <p><strong>Signed:</strong> Driving School MH release certificate</p>
+                        <p><strong>Support call:</strong> 9890183363</p>
+                        <p><strong>WhatsApp support:</strong> 9766688999</p>
+                    </div>
+                    <div class="checksum">SHA-256: 4b07894814564eb75cc6e8add0ef7de0b39defc169ece9f37bd6a5f502cda751</div>
+                </aside>
+            </section>
+
+            <section class="sections" aria-label="Install and trust information">
+                <article class="section-card">
+                    <h2>Install</h2>
+                    <ol>
+                        <li>Download the APK on your Android phone.</li>
+                        <li>Open the downloaded file.</li>
+                        <li>Allow install from browser if Android asks.</li>
+                        <li>Open Driving School MH and complete setup.</li>
+                    </ol>
+                </article>
+
+                <article class="section-card">
+                    <h2>What it includes</h2>
+                    <ul>
+                        <li>Applicant and attendance records</li>
+                        <li>Invoices, receipts, and pending fees</li>
+                        <li>Form 14/Form 15 and report exports</li>
+                        <li>Encrypted local data and backup tools</li>
+                    </ul>
+                </article>
+
+                <article class="section-card">
+                    <h2>Before public use</h2>
+                    <p>Install this APK on a real Android phone and smoke test login, school setup, PIN, applicant entry, attendance, payment, backup, print/share, and update/support guidance.</p>
+                </article>
+            </section>
+        </main>
+
+        <footer>
+            &copy; 2026 MunimG Solutions. All rights reserved.
+        </footer>
+    </div>
+</body>
+
+</html>
