@@ -64,6 +64,8 @@
             padding: 2rem 5%;
             display: flex;
             align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
         }
 
         .logo {
@@ -75,6 +77,22 @@
             display: flex;
             align-items: center;
             gap: 10px;
+        }
+
+        .product-link {
+            color: var(--text-main);
+            font-weight: 600;
+            text-decoration: none;
+            padding: 0.65rem 1rem;
+            border: 1px solid rgba(0, 150, 136, 0.25);
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.75);
+        }
+
+        .product-link:hover,
+        .product-link:focus-visible {
+            color: var(--primary-dark);
+            border-color: var(--primary);
         }
 
         /* Main Content */
@@ -205,7 +223,7 @@
     <div class="bg-shape"></div>
 
     <header>
-        <a href="#" class="logo">
+        <a href="/" class="logo">
             <!-- Simple SVG Logo Icon -->
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M3 3V21H21" stroke="#009688" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
@@ -214,6 +232,7 @@
             </svg>
             MunimG
         </a>
+        <a href="/regional/" class="product-link">MunimG ERP Regional</a>
     </header>
 
     <main>
@@ -255,7 +274,7 @@
     </main>
 
     <footer>
-        &copy; 2025 MunimG Solutions. All rights reserved.
+        &copy; 2026 MunimG Solutions. All rights reserved.
     </footer>
 
     <script>
