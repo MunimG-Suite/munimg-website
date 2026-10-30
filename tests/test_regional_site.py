@@ -69,7 +69,7 @@ class RegionalSiteTest(unittest.TestCase):
                     self.assertEqual(urlsplit(href).path, "/919225252566")
                     self.assertIn("text", parse_qs(urlsplit(href).query))
             self.assertGreaterEqual(phone_links, 2)
-            self.assertEqual("".join(page.phone_text), "+91 9225252566")
+            self.assertEqual("".join(page.phone_text), "+91 92 25 25 25 66")
 
     def test_download_placeholders_do_not_offer_unreleased_files(self):
         page = Page(PAGES[0])
