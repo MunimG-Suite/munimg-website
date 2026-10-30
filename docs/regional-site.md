@@ -17,7 +17,8 @@ it does not claim tablet availability.
   content and no script or redirect to a sales page.
 - Both pages display `+91 92 25 25 25 66`. All ten phone digits use the same
   colour and font weight. Spaces separate each pair; the number stays on one
-  line. The telephone and WhatsApp targets remain `+919225252566`.
+  line. A soft green background covers the full number, including the country
+  code. The telephone and WhatsApp targets remain `+919225252566`.
 - The root homepage keeps its existing product and download content. Only
   its Regional link label changes to `Vikri`.
 - The Vikri top navigation contains `Plans` and `Support`. The app download
@@ -89,6 +90,11 @@ telephone and WhatsApp targets stay unchanged.
   navigation contains only Plans and Support; no horizontal overflow at 320 px.
 
 ## Rollback
+
+Soft-background follow-up on 30-10-2026: all 6 existing website tests and
+`git diff --check` passed (exit 0). Both pages showed the whole number on the
+shared light-green surface, with no horizontal overflow at 320 px. Knowledge
+pages were checked; this shared CSS change adds no route or structural change.
 
 Revert the website change commit if the deployed pages fail their checks. The
 change does not touch app data, account records, release files or ERP source.
