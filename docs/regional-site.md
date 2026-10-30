@@ -6,6 +6,13 @@ and the free and four annual paid plans below. It describes a khatabook for
 small, non-GST businesses. It offers Android phone and Windows information;
 it does not claim tablet availability.
 
+The design uses a white background, deep navy text, vivid blue actions,
+a blue support panel, and a gold phone highlight. Larger type and clearer
+spacing strengthen the page hierarchy. All action buttons keep fully rounded
+pill ends on both pages. Soft shadows and a light top edge give the buttons
+some depth. Active links lift slightly on hover and lower on press; this
+movement is disabled when reduced motion is requested.
+
 ## Pages and contact actions
 
 - `/regional/` is the public product page. It includes plans and a WhatsApp
@@ -17,8 +24,9 @@ it does not claim tablet availability.
   content and no script or redirect to a sales page.
 - Both pages display `+91 92 25 25 25 66`. All ten phone digits use the same
   colour and font weight. Spaces separate each pair; the number stays on one
-  line. A soft green background covers the full number, including the country
-  code. The telephone and WhatsApp targets remain `+919225252566`.
+  line. A soft yellow background covers only the ten phone digits. The `+91`
+  country code has no highlight. The telephone and WhatsApp targets remain
+  `+919225252566`.
 - The root homepage keeps its existing product and download content. Only
   its Regional link label changes to `Vikri`.
 - The Vikri top navigation contains `Plans` and `Support`. The app download
@@ -88,6 +96,19 @@ telephone and WhatsApp targets stay unchanged.
 - The website-only knowledge-page refresh: exit 0.
 - Browser check: the phone digits form one plain text span at weight 400;
   navigation contains only Plans and Support; no horizontal overflow at 320 px.
+
+### Colour, type and button checks - 30-10-2026
+
+- The six existing website tests passed after the final button change:
+  `python -m unittest discover -s tests -v`, exit 0.
+- `git diff --check`: exit 0.
+- Browser checks confirmed the main and support pages had no horizontal
+  overflow at a 320 px viewport. The buttons had no clipped text.
+- Selected text contrast ratios were 17.02:1 for page text, 6.38:1 for the
+  main action, 5.39:1 for support text and 13.21:1 for the phone number.
+- The main page buttons showed rounded ends and shadows. The country code
+  remained outside the number highlight.
+- These checks do not establish full accessibility or physical-device proof.
 
 ## Rollback
 
