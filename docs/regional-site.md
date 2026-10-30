@@ -110,6 +110,14 @@ telephone and WhatsApp targets stay unchanged.
   remained outside the number highlight.
 - These checks do not establish full accessibility or physical-device proof.
 
+### Stylesheet cache fix - 30-10-2026
+
+The live server served the new stylesheet, but an existing browser still used
+its cached green design after reload. Both pages now include a version in the
+stylesheet link. A test compares it with the current CSS content
+so future style changes must update that version. Product: Vikri website.
+Frequency: 6/10. Severity: 3/10. Score: 18.
+
 ## Rollback
 
 Soft-background follow-up on 30-10-2026: all 6 existing website tests and
