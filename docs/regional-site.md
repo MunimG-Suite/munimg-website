@@ -15,10 +15,13 @@ it does not claim tablet availability.
   are a support WhatsApp draft and a telephone link. The logo does not link
   back to the sales page. It contains no plan, price, purchase or upgrade
   content and no script or redirect to a sales page.
-- Both pages use `+91 9225252566`. The middle `252525` has a stronger font
-  weight and green colour. The ten-digit number has no spaces or boxes.
+- Both pages display `+91 92 25 25 25 66`. All ten phone digits use the same
+  colour and font weight. Spaces separate each pair; the number stays on one
+  line. The telephone and WhatsApp targets remain `+919225252566`.
 - The root homepage keeps its existing product and download content. Only
   its Regional link label changes to `Vikri`.
+- The Vikri top navigation contains `Plans` and `Support`. The app download
+  placeholders remain in the opening section; there is no top `Downloads` link.
 
 The support boundary follows the app's existing website-link contract and
 [Google Play's payments guidance](https://support.google.com/googleplay/android-developer/answer/10281818).
@@ -65,12 +68,25 @@ The source was checked in an isolated D: checkout on Windows with Python 3.13.
   at 320 px and normal desktop width. No horizontal overflow was found at the
   narrow widths. Navigation, FAQ expansion and the visible keyboard focus on
   the skip link worked. The support page had only the expected contact links.
-- The number's middle digits use weight 700; the other digits use weight 400.
-  The browser displayed the full number without spaces between its ten digits.
+- At initial publication, the number's middle digits used weight 700 and the
+  other digits used weight 400, with no spaces. The owner later replaced this
+  design with equal-weight, two-digit groups as specified above.
 
 These checks do not prove a hosted deployment, Google Play approval, a real
 phone call, WhatsApp message delivery, physical-device accessibility or app
 release readiness. No app package was built or uploaded.
+
+### Phone spacing and navigation check — 30-10-2026
+
+The owner requested equal styling with `92 25 25 25 66`, and removal of the
+top `Downloads` link. Both contact pages use the grouped display. The actual
+telephone and WhatsApp targets stay unchanged.
+
+- `python -m unittest discover -s tests -v`: exit 0; all 6 existing tests passed.
+- `git diff --check`: exit 0.
+- The website-only knowledge-page refresh: exit 0.
+- Browser check: the phone digits form one plain text span at weight 400;
+  navigation contains only Plans and Support; no horizontal overflow at 320 px.
 
 ## Rollback
 
