@@ -1,5 +1,6 @@
 """Check the public-page and app-support boundaries without extra packages."""
 
+import hashlib
 from html.parser import HTMLParser
 from pathlib import Path
 import re
@@ -43,6 +44,16 @@ class Page(HTMLParser):
 
 
 class RegionalSiteTest(unittest.TestCase):
+    def test_stylesheet_version_matches_current_content(self):
+        stylesheet = ROOT / "regional/styles.css"
+        version = hashlib.sha256(stylesheet.read_text(encoding="utf-8").encode()).hexdigest()[:12]
+        for path in PAGES:
+            local_styles = [urlsplit(link["href"]) for link in Page(path).elements("link")
+                            if link.get("rel") == "stylesheet"
+                            and urlsplit(link["href"]).path == "/regional/styles.css"]
+            self.assertEqual(len(local_styles), 1)
+            self.assertEqual(parse_qs(local_styles[0].query), {"v": [version]})
+
     def test_app_support_cannot_lead_to_sales(self):
         page = Page(PAGES[1])
         allowed = {
