@@ -205,24 +205,90 @@ h2.small-title { margin-bottom: 28px; color: var(--muted); font-size: 20px; line
     .how { padding-top: 364px; }
 }
 @media (max-width: 560px) {
+    h2 { line-height: 1.12; }
+    h3 { line-height: 1.55; }
+    .section-lead { margin-top: 12px; }
+    .band-navy .header { padding-block: 16px; }
     .nav { gap: 24px; }
+
+    .hero { padding-top: 28px; }
+    .hero-top { gap: 22px; }
+    .hero .kicker { margin-bottom: 14px; }
+    .hero h1 { line-height: 1.05; }
+    .hero .actions { margin-top: 26px; }
     .hero .actions .button { width: 100%; }
-    .hero .actions .text-link { width: 100%; justify-content: center; }
-    .availability { text-align: center; }
+    .hero .text-link { display: none; }
+    .availability { margin-top: 16px; text-align: center; }
+
+    .how { padding-bottom: 64px; }
+    .steps { gap: 32px; margin-top: 28px; }
+    .step h3 { margin: 16px 0 4px; }
     .mini { height: 236px; padding: 20px; }
+    .mini-label { margin-bottom: 6px; }
+    .step:nth-child(1) .mini { gap: 14px; }
+    .step:nth-child(3) .mini { gap: 8px; }
+    .step:nth-child(3) .mini-button { margin-top: 4px; }
+
+    .clicks { padding-block: 64px; }
+    .clicks .split { gap: 24px; }
+    .clicks-example, .click-note { margin-top: 12px; }
     .click-table thead th, .click-table thead td { padding: 0 0 12px 12px; font-size: 16px; line-height: 1.3; vertical-align: bottom; }
-    .click-table thead .click-other { width: 84px; font-size: 14px; }
-    .click-table tbody th { padding-right: 8px; font-size: 18px; }
-    .click-table tbody td { padding-left: 12px; }
+    .click-table thead td { padding-left: 0; }
+    .click-table thead .click-other { width: 96px; font-size: 14px; }
+    .click-table thead th:last-child { width: 76px; }
+    .click-table tbody th { padding: 14px 8px 14px 0; font-size: 18px; }
+    .click-table tbody td { padding: 14px 0 14px 12px; }
     .click-table tbody .click-other { font-size: 32px; }
     .click-vikri { font-size: 48px; }
-    .pay-card { padding: 18px; }
+
+    .staff-layout { flex-direction: column; flex-wrap: nowrap; align-items: stretch; gap: 0; }
+    .staff-copy { display: contents; }
+    .staff-copy h2 { order: 1; }
+    .staff-copy .section-lead { order: 2; }
+    .pay-card { order: 3; flex: none; max-width: none; margin-top: 28px; padding: 18px; }
+    .fact-list { order: 4; margin-top: 28px; }
+    .pay-month { margin-top: 2px; }
+    .week-days, .days { gap: 5px; }
+    .week-days { margin-top: 14px; }
     .day { height: 36px; }
-    .language-words { flex-direction: column; align-items: flex-start; gap: 4px; font-size: 44px; }
+    .legend { gap: 6px 14px; margin-top: 12px; }
+    .pay-lines { margin-top: 14px; padding-top: 12px; }
+
+    .languages-band { padding-block: 64px; }
+    .languages-band .split { gap: 36px; }
+    h2.small-title { margin-bottom: 18px; font-size: 18px; line-height: 1.55; }
+    .language-words { flex-direction: column; align-items: flex-start; gap: 4px; font-size: 44px; line-height: 1.25; }
     .language-words i { display: none; }
+    .fact-stack { gap: 22px; }
+
+    .plan-grid { gap: 12px; margin-top: 32px; }
+    .plan { padding: 20px; }
+    .plan-free { border: 0; }
+    .plan:not(.plan-both) li:first-child { margin-top: 0; }
+    .plan:not(.plan-both) { display: grid; grid-template-columns: minmax(0, 1fr) auto; column-gap: 12px; align-items: baseline; }
+    .plan:not(.plan-both) > p:not(.price), .plan:not(.plan-both) > ul { grid-column: 1 / -1; }
+    .plan-both { padding: 19px; }
+    .plan .price { margin: 0; font-size: 34px; white-space: nowrap; }
+    .plan-both .price { margin-top: 8px; }
+    .plan > p:not(.price) { margin-top: 8px; }
+    .plan ul { margin-top: 12px; }
+    .plan li { margin-top: 4px; }
+    .plan-rows { margin-top: 20px; }
+    .plan-row { padding-block: 14px; }
+    .plan-bottom { gap: 20px; margin-top: 20px; }
     .plan-bottom .button, .help-actions-row, .help-actions-row .actions { width: 100%; }
+
+    .questions-layout { gap: 24px; }
+    .question-grid h3 { line-height: 1.3; }
+
+    .help { padding-block: 64px 48px; }
+    .help-layout, .help-actions-row { gap: 22px; }
+    .help .icon { display: none; }
     .help-actions-row .button { flex: 1 1 0; }
     .help-actions { grid-template-columns: repeat(1, minmax(0, 1fr)); }
+
+    .band-navy .footer { flex-direction: column-reverse; align-items: flex-start; gap: 20px; padding-block: 24px 32px; }
+    .footer-brand { gap: 16px; }
 }
 @media (forced-colors: active) {
     .button, .mini-button, .shot-phone, .day { border: 1px solid ButtonText; }

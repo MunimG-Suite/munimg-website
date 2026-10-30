@@ -18,6 +18,12 @@ The two opening screens in `regional/images` are the real `Add item options`
 test images from the ERP repository, cropped by a task script. Replace them
 with device screenshots when those are available.
 
+At 560 px and below, the home page follows the approved phone design, not the
+desktop layout. The staff card comes before the staff list, the Free and First
+phone prices sit beside the plan name, the opening section has only the WhatsApp
+action, and the help buttons have no icons. Compare any phone change with that
+design side by side. A check for overflow alone does not prove a match.
+
 ## Click table
 
 The click table uses one rule: every box or button tapped is 1 click, and
@@ -31,8 +37,8 @@ and 8 types.
 - Other billing apps, 18+ to bill: an estimate, because the help pages do not
   show this flow step by step.
 
-These numbers need a hands-on phone test before they are published on the live
-site. The page does not name the other apps.
+The owner chose to publish these numbers on 30-10-2026 before a hands-on phone
+test. That test remains open. The page does not name the other apps.
 
 ## Pages and contact actions
 
@@ -155,6 +161,23 @@ The source was checked in an isolated D: worktree on Windows with Python 3.13.7.
 These checks do not prove a hosted deployment, a real phone, WhatsApp delivery,
 Google Play approval or full accessibility. The click counts were not tested
 by hand in any app.
+
+### Phone layout match - 30-10-2026
+
+The first build used the desktop layout at phone width, so it did not match the
+approved phone design. Product: Vikri website. Frequency: 10/10. Severity: 3/10.
+Score: 30. This change adds phone rules at 560 px and below.
+
+- `python -m unittest discover -s tests -v`: exit 0; 9 tests passed.
+- `git diff --check`: exit 0.
+- Side-by-side check at 390 px: all 24 headings were within 1 px of the phone
+  design. Footer legal links stay out, because those pages do not exist.
+- At 320 and 560 px there was no horizontal overflow. At 320 px all links were
+  at least 44 px tall.
+- Pixel comparison with the live page at 1440 and 800 px: the only change is the
+  footer link text, now `Help & Support`.
+
+These checks do not prove a real phone, WhatsApp delivery or full accessibility.
 
 ## Rollback
 
