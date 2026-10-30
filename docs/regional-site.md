@@ -1,17 +1,38 @@
 # Vikri website
 
-The Regional website uses the Vikri name. The approved design uses a light
-background, two short feature lists, app downloads and support at the top,
-and the free and four annual paid plans below. It describes a khatabook for
-small, non-GST businesses. It offers Android phone and Windows information;
-it does not claim tablet availability.
+The Regional website uses the Vikri name. The owner approved the 30-10-2026
+home page design from the mockup. Its order is: opening section, three steps
+for item options, the click table, staff, languages, plans, questions and
+support. The opening line is `Fewer clicks. Faster bills.` because it fits
+every shop; `Every size. Every colour.` was rejected for not doing so. The page
+describes billing for small, non-GST businesses. It offers Android phone and
+Windows information; it does not claim tablet availability.
 
-The design uses a white background, deep navy text, vivid blue actions,
-a blue support panel, and a gold phone highlight. Larger type and clearer
-spacing strengthen the page hierarchy. All action buttons keep fully rounded
-pill ends on both pages. Soft shadows and a light top edge give the buttons
-some depth. Active links lift slightly on hover and lower on press; this
-movement is disabled when reduced motion is requested.
+The design uses the approved Vikri logo kit from the ERP repository
+(`docs/design/brand/vikri`): navy `#10265B`, saffron `#F29B16`, and the name
+pair logo. Saffron is never small text on white, because its contrast is too
+low there. Buttons are flat with a 12 px corner. Hindi and Marathi text uses
+Noto Sans Devanagari, because Inter has no Devanagari letters.
+
+The two opening screens in `regional/images` are the real `Add item options`
+test images from the ERP repository, cropped by a task script. Replace them
+with device screenshots when those are available.
+
+## Click table
+
+The click table uses one rule: every box or button tapped is 1 click, and
+typing is not counted. The task is one new item with a name and a sale rate
+and 8 types.
+
+- Vikri, counted from the Android source: 11 clicks to add all 8 types, and 10
+  clicks to bill them with different quantities.
+- Other billing apps, 25+ to add: counted on 30-10-2026 from public help pages,
+  not from use of the apps. Swipe 27, Vyapar 25 and myBillBook 32.
+- Other billing apps, 18+ to bill: an estimate, because the help pages do not
+  show this flow step by step.
+
+These numbers need a hands-on phone test before they are published on the live
+site. The page does not name the other apps.
 
 ## Pages and contact actions
 
@@ -24,13 +45,14 @@ movement is disabled when reduced motion is requested.
   content and no script or redirect to a sales page.
 - Both pages display `+91 92 25 25 25 66`. All ten phone digits use the same
   colour and font weight. Spaces separate each pair; the number stays on one
-  line. A soft yellow background covers only the ten phone digits. The `+91`
-  country code has no highlight. The telephone and WhatsApp targets remain
+  line. On the support page, a soft saffron background covers only the ten
+  phone digits and the `+91` country code has no highlight. The home page shows
+  the number in plain white on navy. The telephone and WhatsApp targets remain
   `+919225252566`.
 - The root homepage keeps its existing product and download content. Only
   its Regional link label changes to `Vikri`.
-- The Vikri top navigation contains `Plans` and `Support`. The app download
-  placeholders remain in the opening section; there is no top `Downloads` link.
+- The Vikri top navigation contains `Plans` and `Support`. There is no top
+  `Downloads` link.
 
 The support boundary follows the app's existing website-link contract and
 [Google Play's payments guidance](https://support.google.com/googleplay/android-developer/answer/10281818).
@@ -39,9 +61,10 @@ The page layout alone does not establish Google Play approval.
 
 ## Downloads and legal pages
 
-The owner requested download placeholders on 30-10-2026. Both download buttons
-are disabled and say `Coming soon`. No APK, installer or store URL is invented.
-Replace each placeholder with a real link when that release is approved.
+The approved design replaces the two disabled download buttons with one line:
+`Coming soon on Android and Windows`. The main action is a WhatsApp link. No
+APK, installer or store URL is invented. Add real download links when each
+release is approved.
 
 Privacy, terms and refund links are omitted because no approved public pages
 are available in this repository. The Regional app's legal publication gate
@@ -117,6 +140,21 @@ its cached green design after reload. Both pages now include a version in the
 stylesheet link. A test compares it with the current CSS content
 so future style changes must update that version. Product: Vikri website.
 Frequency: 6/10. Severity: 3/10. Score: 18.
+
+### Home page redesign check - 30-10-2026
+
+The source was checked in an isolated D: worktree on Windows with Python 3.13.7.
+
+- `python -m unittest discover -s tests -v`: exit 0; 9 tests passed.
+- `git diff --check`: exit 0.
+- Browser checks with Edge at 1440, 1000, 390 and 320 px: the page rendered in
+  the expected order. At 390 and 320 px there was no horizontal overflow, the
+  opening line stayed on two lines and all links were at least 44 px tall.
+- The support page was checked at 1440 and 320 px.
+
+These checks do not prove a hosted deployment, a real phone, WhatsApp delivery,
+Google Play approval or full accessibility. The click counts were not tested
+by hand in any app.
 
 ## Rollback
 

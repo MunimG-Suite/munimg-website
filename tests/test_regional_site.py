@@ -82,14 +82,25 @@ class RegionalSiteTest(unittest.TestCase):
             self.assertGreaterEqual(phone_links, 2)
             self.assertEqual("".join(page.phone_text), "+91 92 25 25 25 66")
 
-    def test_download_placeholders_do_not_offer_unreleased_files(self):
+    def test_unreleased_apps_are_announced_without_download_controls(self):
         page = Page(PAGES[0])
-        placeholders = [b for b in page.elements("button") if "download-placeholder" in b.get("class", "").split()]
-        self.assertEqual(len(placeholders), 2)
-        self.assertTrue(all("disabled" in b and "onclick" not in b for b in placeholders))
-        self.assertEqual(" ".join(page.text).count("Coming soon"), 2)
+        self.assertFalse(page.elements("button"))
+        self.assertEqual(" ".join(page.text).count("Coming soon on Android and Windows"), 1)
         for link in page.elements("a"):
             self.assertNotRegex(link["href"], r"(?i)\.(apk|aab|msi|exe)(?:\?|$)|play\.google\.com")
+
+    def test_plans_keep_the_five_public_prices(self):
+        text = " ".join(Page(PAGES[0]).text)
+        for price in ("₹0", "₹999", "₹1,999", "₹2,999", "₹3,999"):
+            self.assertIn(price, text)
+
+    def test_click_table_shows_vikri_counts_and_the_counting_rule(self):
+        page = Page(PAGES[0])
+        text = " ".join(page.text)
+        self.assertEqual(len(page.elements("table")), 1)
+        for phrase in ("Clicks to add all 8 types", "Clicks to bill all 8 types",
+                       "Every box or button you tap is 1 click."):
+            self.assertIn(phrase, text)
 
     def test_local_links_assets_and_fragments_exist(self):
         for path in PAGES:
@@ -117,7 +128,7 @@ class RegionalSiteTest(unittest.TestCase):
     def test_visible_copy_has_no_removed_claims_or_preview_text(self):
         for path in PAGES:
             text = " ".join(Page(path).text)
-            self.assertNotRegex(text.lower(), r"\b(?:tablet|b2b|b2c|mockup|preview|todo)\b|formerly|munimg erp regional")
+            self.assertNotRegex(text.lower(), r"\b(?:tablet|b2b|b2c|mockup|preview|todo|fastest)\b|formerly|munimg erp regional")
 
     def test_pages_have_one_heading_and_their_own_canonical_url(self):
         for path, suffix in zip(PAGES, ("/regional/", "/regional/support/")):
