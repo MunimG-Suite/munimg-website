@@ -8,9 +8,9 @@ Website is light static source and should not be mixed with ERP business logic.
 
 | Role | Count |
 | --- | --- |
-| asset_or_unknown | 1 |
-| human_doc_secondary | 2 |
-| source | 4 |
+| asset_or_unknown | 2 |
+| human_doc_secondary | 3 |
+| source | 7 |
 
 ## Route Or Navigation Evidence
 
