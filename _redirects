@@ -2,3 +2,26 @@
 /downloads/driving-school/DrivingSchoolMH-1.0.1-build2.apk https://github.com/MunimG-Suite/MunimG-Releases/releases/download/dsm-v1.0.1/app-release.apk 302
 /downloads/driving-school/DrivingSchoolMH-1.0.2-build3.apk https://github.com/MunimG-Suite/MunimG-Releases/releases/download/dsm-v1.0.2/app-release.apk 302
 /downloads/driving-school/latest.apk https://github.com/MunimG-Suite/MunimG-Releases/releases/download/dsm-v1.0.2/app-release.apk 302
+
+# Vikri website pages; keep application update and release paths direct.
+/regional /vikri/ 301
+/regional/ /vikri/ 301
+/regional/index.html /vikri/ 301
+/regional/support /vikri/support/ 301
+/regional/support/ /vikri/support/ 301
+/regional/support/index.html /vikri/support/ 301
+/regional/delete-account /vikri/delete-account/ 301
+/regional/delete-account/ /vikri/delete-account/ 301
+/regional/delete-account/index.html /vikri/delete-account/ 301
+/regional/release-notes /vikri/release-notes/ 301
+/regional/release-notes/ /vikri/release-notes/ 301
+/regional/release-notes/index.html /vikri/release-notes/ 301
+/regional/privacy /vikri/privacy/ 301
+/regional/privacy/ /vikri/privacy/ 301
+/regional/privacy/index.html /vikri/privacy/ 301
+/regional/terms /vikri/terms/ 301
+/regional/terms/ /vikri/terms/ 301
+/regional/terms/index.html /vikri/terms/ 301
+/regional/refund-licence /vikri/refund-licence/ 301
+/regional/refund-licence/ /vikri/refund-licence/ 301
+/regional/refund-licence/index.html /vikri/refund-licence/ 301
